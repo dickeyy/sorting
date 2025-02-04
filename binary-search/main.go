@@ -5,6 +5,7 @@ import (
 	"sort"
 	"time"
 
+	"github.com/dickeyy/sorting/lib"
 	"golang.org/x/exp/rand"
 )
 
@@ -65,17 +66,6 @@ func binarySearch(arr []int, target int, visualize bool) int {
 	return -1
 }
 
-func generateSortedArray(size int, minVal, maxVal int) []int {
-	items := make([]int, size)
-
-	for i := 0; i < size; i++ {
-		items[i] = rand.Intn(maxVal-minVal) + minVal
-	}
-
-	sort.Ints(items)
-	return items
-}
-
 func main() {
 	// Seed the random number generator
 	rand.Seed(uint64(time.Now().UnixNano()))
@@ -86,7 +76,8 @@ func main() {
 	min := 1
 	max := rand.Int()
 
-	items := generateSortedArray(size, min, max)
+	items := lib.MakeRandomArray(size, min, max)
+	sort.Ints(items)
 
 	// Pick random target from the array
 	target := items[rand.Intn(len(items))]
