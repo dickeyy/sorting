@@ -77,7 +77,7 @@ func partition(arr []int, low, high int, visualize bool) int {
 func main() {
 	// Generate random array
 	size := 10_000
-	arr := lib.MakeRandomArray(size, 1, 10_001)
+	arr := lib.MakeRandomArray(size, 1, size+1)
 
 	// fmt.Printf("Initial array: %v\n", arr)
 
