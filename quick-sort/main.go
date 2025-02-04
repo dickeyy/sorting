@@ -76,15 +76,16 @@ func partition(arr []int, low, high int, visualize bool) int {
 
 func main() {
 	// Generate random array
-	size := 10_000
+	size := 1_000_000_000
+	start := time.Now()
 	arr := lib.MakeRandomArray(size, 1, size+1)
+	fmt.Printf("Made array in: %s\n", time.Since(start))
 
 	// fmt.Printf("Initial array: %v\n", arr)
 
-	start := time.Now()
+	start = time.Now()
 	quickSort(arr, 0, len(arr)-1, false)
-	elapsed := time.Since(start)
 
 	// fmt.Printf("\nFinal sorted array: %v\n", arr)
-	fmt.Printf("Time elapsed: %s for %d items\n", elapsed, size)
+	fmt.Printf("Time elapsed: %s for %d items\n", time.Since(start), size)
 }
