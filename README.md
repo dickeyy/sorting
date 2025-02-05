@@ -1,4 +1,4 @@
-# Sorting
+# Sorting and stuff
 
 Some random sorting and searching algorithms that I wanted to implement
 
